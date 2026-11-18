@@ -1,6 +1,6 @@
 # Regression analysis (Draft)
 
-- **Range:** `6a57359..working tree` (main to mwall/product-brief, uncommitted)
+- **Range:** `6a57359..05f35c5` (main to mwall/product-brief)
 - **Files:** 4 changed: 4 analysed, 0 ignored
 - **Areas:** Tasks (Medium), Web UI (Medium)
 - **Highest risk:** Medium

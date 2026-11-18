@@ -1,7 +1,7 @@
 # Test plan (Sample results): Overdue tasks filter (new-feature): test report
 
 - **Verdict:** Failures present
-- **Context:** Sample results on branch mwall/product-brief (uncommitted)
+- **Context:** Sample results on branch mwall/product-brief (05f35c5)
 - **Source:** 29 test rows (4 closure rows excluded)
 
 ## Headline

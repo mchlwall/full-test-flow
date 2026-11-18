@@ -1,7 +1,7 @@
 # Automation recommendation (Draft): Overdue tasks filter
 
 - **Brief:** `demo/01-brief.md`
-- **Branch range:** `6a57359..working tree`
+- **Branch range:** `6a57359..05f35c5`
 - **Ticket repository:** `mchlwall/full-test-flow`
 
 ## 1. Suites to run
