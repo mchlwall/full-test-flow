@@ -84,8 +84,10 @@ uses the short "not run" variant from the same template instead. Nothing is writ
 
 ### C. Check and emit (deterministic)
 
-13. Build each run command from `run-suite.sh`'s path and the suite name. Add a selector argument
-    only when the script forwards extra arguments to the test runner (look for `"$@"`).
+13. Build each run command. If the suite has a Run command in `suite-mapping.md`, use it as written.
+    Otherwise build it from `run-suite.sh`'s path and the suite name. Add a selector argument only
+    when the script forwards extra arguments to the test runner (look for `"$@"`), or when the
+    mapped command is a test-runner call that accepts a file or test name.
 14. Before emitting, verify:
     - every suite name in the output appears in the list from step 2;
     - every Source cell names a file from step 1 and a line inside one of its hunks;

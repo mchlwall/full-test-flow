@@ -2,16 +2,17 @@
 
 Optional. Save as `suite-mapping.md` anywhere in the target repo (for example `docs/suite-mapping.md`).
 When it exists, the analyzer looks up areas, suites and risk floors here instead of judging them.
-Keep the suite list in sync with `run-suite.sh`.
+Keep the suite list in sync with `run-suite.sh`. The Run command column is optional: fill it when a
+suite doesn't run through `run-suite.sh` (for example a browser or unit-test suite).
 
 ```markdown
 # Suite mapping
 
 ## Suites
 
-| Suite | Area | Covers |
-|---|---|---|
-| `<suite-id>` | <area name> | <endpoints, pages or behaviours the suite exercises> |
+| Suite | Area | Covers | Run command |
+|---|---|---|---|
+| `<suite-id>` | <area name> | <endpoints, pages or behaviours the suite exercises> | `<command that runs only this suite>` |
 
 ## Path rules
 
