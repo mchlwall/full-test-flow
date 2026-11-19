@@ -10,6 +10,7 @@ A worked run of the flow against [project-manager](https://github.com/mchlwall/p
 | [04-automation.md](04-automation.md) | Suites to run, coverage gaps, draft tickets | suite-and-ticket-recommender |
 | [05-plan-completed.md](05-plan-completed.md) | The plan with **sample** results | Written for the demo |
 | [06-report.md](06-report.md) | Test report from the completed plan | test-report-generator |
+| [06-report.html](06-report.html) | The same report as a one-page HTML view (`--html`) | test-report-generator |
 
 ## About the sample results
 

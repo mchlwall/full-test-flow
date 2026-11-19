@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test plan (Sample results): Overdue tasks filter (new-feature): test report</title><style>
+:root{--ink:#1a1a1a;--ink2:#55585f;--ink3:#8a8f98;--line:#e6e8eb;--panel:#f7f8f9;--green:#1a7f4b;
+--green-bg:#e8f5ee;--blue:#1f6feb;--amber:#9a6a00;--amber-bg:#fdf3e2;--red:#b3261e;--red-bg:#fbeae8;}
+*{box-sizing:border-box}body{margin:0;background:#eef0f2;color:var(--ink);padding:32px 16px;
+font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.page{max-width:960px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:12px;padding:32px}
+h1{font-size:22px;margin:0}h2{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink3);margin:28px 0 12px}
+.head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.tiny{font-size:12px;color:var(--ink3);margin-top:6px}
+.badge{font-weight:600;font-size:12px;padding:4px 10px;border-radius:999px}
+.green{color:var(--green)}.red{color:var(--red)}.amber{color:var(--amber)}
+.badge.green{background:var(--green-bg)}.badge.red{background:var(--red-bg)}.badge.amber{background:var(--amber-bg)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:20px}
+.kpi{border:1px solid var(--line);border-radius:10px;padding:14px}.kpi b{display:block;font-size:26px}
+.kpi span{font-size:12px;color:var(--ink3)}
+.cols{display:grid;grid-template-columns:3fr 2fr;gap:28px}@media(max-width:720px){.cols{grid-template-columns:1fr}}
+.bar{display:grid;grid-template-columns:minmax(110px,200px) 1fr 40px;align-items:center;gap:10px;margin-bottom:7px}
+.bar .n{font-size:13px;color:var(--ink2);text-align:right}.track{background:var(--panel);border-radius:5px;height:18px}
+.fill{height:100%;border-radius:5px;background:var(--blue);opacity:.85}.fill.ok{background:var(--green)}
+.v{font-size:12px;font-weight:600;color:var(--ink2)}
+.callouts{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:720px){.callouts{grid-template-columns:1fr}}
+.callout{border-radius:10px;padding:12px 14px;border:1px solid var(--line);background:var(--panel)}
+.callout.red{background:var(--red-bg)}.callout.amber{background:var(--amber-bg)}.callout.green{background:var(--green-bg)}
+.callout b{display:block;font-size:13px;margin-bottom:4px}.callout ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink2)}
+.callout p{margin:0;font-size:13px;color:var(--ink2)}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);font-size:13px}
+th{color:var(--ink3);font-size:12px;text-transform:uppercase}td.n,th.n{text-align:right}
+@media print{body{background:#fff;padding:0}.page{border:0}}
+</style></head><body><div class="page">
+<div class="head"><h1>Test plan (Sample results): Overdue tasks filter (new-feature)</h1><span class="badge red">Failures present</span></div>
+<p class="tiny">Sample results on branch mwall/product-brief (05f35c5) · 29 test rows (4 closure rows excluded)</p>
+<div class="kpis"><div class="kpi"><b class="red">96%</b><span>Pass rate</span></div><div class="kpi"><b class="">25</b><span>Executed (passed + failed)</span></div><div class="kpi"><b class="red">1</b><span>Failed</span></div><div class="kpi"><b class="amber">1</b><span>Blocked</span></div><div class="kpi"><b class="amber">3</b><span>Not run</span></div><div class="kpi"><b class="amber">3</b><span>Expected result unconfirmed</span></div><div class="kpi"><b class="">6</b><span>Areas</span></div></div>
+<div class="cols"><div><h2>Cases per area</h2><div class="bar"><div class="n">Smoke checks</div><div class="track"><div class="fill " style="width:33.3%"></div></div><div class="v">3</div></div><div class="bar"><div class="n">Core behaviour</div><div class="track"><div class="fill " style="width:66.7%"></div></div><div class="v">6</div></div><div class="bar"><div class="n">Options and settings</div><div class="track"><div class="fill " style="width:66.7%"></div></div><div class="v">6</div></div><div class="bar"><div class="n">Edge cases and resilience</div><div class="track"><div class="fill " style="width:100.0%"></div></div><div class="v">9</div></div><div class="bar"><div class="n">Accessibility and quality</div><div class="track"><div class="fill " style="width:22.2%"></div></div><div class="v">2</div></div><div class="bar"><div class="n">Contexts</div><div class="track"><div class="fill " style="width:33.3%"></div></div><div class="v">3</div></div></div>
+<div><h2>Passing cases per environment</h2><div class="bar"><div class="n">api</div><div class="track"><div class="fill ok" style="width:100.0%"></div></div><div class="v">16</div></div><div class="bar"><div class="n">browser</div><div class="track"><div class="fill ok" style="width:93.8%"></div></div><div class="v">15</div></div></div></div>
+<h2>Findings</h2><div class="callouts"><div class="callout red"><b>Failures (1)</b><ul><li>#6 User unticks Overdue only - SAMPLE-101: full list only returned after unticking twice</li></ul></div><div class="callout amber"><b>Blocked (1)</b><ul><li>#9 User marks an overdue task DONE while Overdue only is ticked - Blocked by #6</li></ul></div><div class="callout amber"><b>Expected result not confirmed (3)</b><ul><li>#21 User requests overdue= (empty value) - Assumption; awaiting owner</li><li>#22 User requests overdue=TRUE (upper case) - Assumption; awaiting owner</li><li>#26 User tabs to the checkbox and toggles it with the keyboard - Assumption; awaiting owner</li></ul></div></div>
+<h2>By area</h2><table><thead><tr><th>Area</th><th class="n">Cases</th><th class="n">Passed</th>
+<th class="n">Failed</th><th class="n">Blocked</th><th class="n">Not run</th></tr></thead><tbody><tr><td>Smoke checks</td><td class='n'>3</td><td class='n'>3</td><td class='n'>0</td><td class='n'>0</td><td class='n'>0</td></tr><tr><td>Core behaviour</td><td class='n'>6</td><td class='n'>4</td><td class='n'>1</td><td class='n'>1</td><td class='n'>0</td></tr><tr><td>Options and settings</td><td class='n'>6</td><td class='n'>6</td><td class='n'>0</td><td class='n'>0</td><td class='n'>0</td></tr><tr><td>Edge cases and resilience</td><td class='n'>9</td><td class='n'>7</td><td class='n'>0</td><td class='n'>0</td><td class='n'>2</td></tr><tr><td>Accessibility and quality</td><td class='n'>2</td><td class='n'>1</td><td class='n'>0</td><td class='n'>0</td><td class='n'>1</td></tr><tr><td>Contexts</td><td class='n'>3</td><td class='n'>3</td><td class='n'>0</td><td class='n'>0</td><td class='n'>0</td></tr></tbody></table>
+<h2>Summary</h2><p>24/25 executed cases passed across 6 areas; 1 failed, 1 blocked, 3 not run. Verdict: Failures present.</p>
+</div></body></html>

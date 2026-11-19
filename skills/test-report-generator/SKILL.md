@@ -22,6 +22,7 @@ one line of context, run the script, and relay the result.
 | Title | no | Defaults to the plan's `#` heading |
 | Context | no | One line: build, environment or date range tested |
 | Output path | no | Defaults to printing in chat |
+| HTML path | no | Also writes a self-contained HTML one-pager of the same numbers. Use when the user wants something to show or share |
 
 Result columns are found by elimination: every column except `#`, `Test case`, `Expected`, `Notes`,
 `Source` and `Severity` counts as an environment. Tables without a `Test case` column (such as a
@@ -31,7 +32,9 @@ surface grade or coverage table) are skipped.
 
 A Markdown report shaped like [templates/report.md](templates/report.md), with a verdict, a headline
 metrics table, per-area and per-environment tables, lists of failures, blocked, out-of-scope and
-unrecognised values, and a one-line summary for a PR description. Add `--json` for the raw metrics.
+unrecognised values, and a one-line summary for a PR description. Add `--html <path>` for an HTML
+one-pager (tiles, per-area and per-environment bars, findings, by-area table) and `--json` for the raw
+metrics. The HTML is a second view of the same metrics; it never recounts.
 
 ## Procedure
 
@@ -39,7 +42,7 @@ unrecognised values, and a one-line summary for a PR description. Add `--json` f
 2. Run:
    ```bash
    python3 <skill-dir>/scripts/summarise_plan.py --input <plan.md> \
-     [--output <report.md>] [--title "<title>"] [--context "<one line>"]
+     [--output <report.md>] [--html <report.html>] [--title "<title>"] [--context "<one line>"]
    ```
 3. If the script exits with "No table with a 'Test case' column", the input isn't a plan in the
    expected layout. Say so and stop. Don't reformat the plan to make it parse.
@@ -73,7 +76,8 @@ reported in its own section). Each row then takes one status, in this order:
    parsing problem rather than correcting it.
 2. Never add findings, causes, severities or recommendations that aren't in the plan's own rows.
    Failure explanations come only from that row's Notes.
-3. Never edit the plan or the generated report. To change the layout, edit the template.
+3. Never edit the plan or the generated report. To change the layout, edit the template (Markdown) or
+   `render_html` in the script (HTML).
 4. A report built from a plan with no executed rows must be described as status-only, never as
    evidence the feature works.
 5. Keep the chat message to the verdict, the summary line and the notable lists.
@@ -82,7 +86,9 @@ reported in its own section). Each row then takes one status, in this order:
 
 - The original read tab-separated spreadsheet exports with fixed browser columns and produced a
   styled HTML page. This version reads Markdown tables, detects environment columns by
-  elimination, and outputs Markdown only.
+  elimination, and writes Markdown, with an optional HTML one-pager built from the same metrics.
+- The HTML page has no feature-flag callout and no per-browser chart; it shows one bar per
+  environment instead.
 - The original also scanned row text for feature-flag and rollback keywords tied to its own naming
   conventions. That's dropped.
 - Cells containing a literal `|` will split the row. Escape them or remove them before running.
